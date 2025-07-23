@@ -2,12 +2,14 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/home/home';
 import Contact from '../pages/contact/contact';
+import AboutUs from '../pages/aboutUs/aboutUs';
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/aboutUs" element={<AboutUs />} />
     </Routes>
   );
 }

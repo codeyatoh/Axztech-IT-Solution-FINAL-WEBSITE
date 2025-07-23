@@ -1,5 +1,5 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -7,7 +7,6 @@
   justify-content: center;
   background: none;
   box-shadow: none;
-  /* No margin-top here */
 }
   
   .nav {
@@ -36,7 +35,7 @@
     pointer-events: auto;
     white-space: nowrap;
     min-width: 0;
-    margin-top: 16px;
+    /* margin-top: 16px;  Removed for sticky/fixed header */
   }
   
   .logo {

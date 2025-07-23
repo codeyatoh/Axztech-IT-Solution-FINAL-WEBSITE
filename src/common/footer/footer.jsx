@@ -9,6 +9,7 @@ import {
 } from 'react-icons/fa';
 import styles from './Footer.module.css';
 import logoImg from '../../assets/images/axztech-logo.png';
+import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <div className={styles.footerContainer}>
@@ -35,24 +36,24 @@ function Footer() {
               <h3 className={styles.sectionTitle}>Quick Links</h3>
               <ul className={styles.linkList}>
                 <li>
-                  <a href="#" className={styles.link}>
+                  <Link to="/" className={styles.link} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className={styles.link}>
+                  <a href="#about" className={styles.link} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className={styles.link}>
+                  <a href="#product" className={styles.link} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     Products
                   </a>
                 </li>
                 <li>
-                  <a href="#" className={styles.link}>
+                  <Link to="/contact" className={styles.link} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

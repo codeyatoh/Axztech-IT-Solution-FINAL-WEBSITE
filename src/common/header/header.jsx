@@ -1,27 +1,28 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './header.module.css';
 import logoImg from '../../assets/images/axztech-logo.png';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
   const companyName = 'AXZTECH IT SOLUTION';
   const [displayed, setDisplayed] = useState('');
   const indexRef = useRef(0);
   const timeoutRef = useRef(null);
   const [btnHovered, setBtnHovered] = useState(false);
   const [mobileBtnHovered, setMobileBtnHovered] = useState(false);
-  const [activeSection, setActiveSection] = useState('#home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10
-      setScrolled(isScrolled)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Improved typewriter animation (no missing/skipped letters)
   useEffect(() => {
@@ -48,6 +49,19 @@ function Header() {
     return () => window.removeEventListener('resize', handleResize);
   }, [mobileMenuOpen]);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
+  // Helper to determine active tab
+  const isActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <nav className={styles.nav}>
@@ -63,10 +77,10 @@ function Header() {
             </span>
           </div>
           <ul className={styles.navLinks}>
-            <li><a href="#home" className={`${styles.navLink} ${activeSection === '#home' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#home')}>HOME</a></li>
-            <li><a href="#about" className={`${styles.navLink} ${activeSection === '#about' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#about')}>ABOUT</a></li>
-            <li><a href="#product" className={`${styles.navLink} ${activeSection === '#product' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#product')}>PRODUCT</a></li>
-            <li><a href="#contact" className={`${styles.navLink} ${activeSection === '#contact' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#contact')}>CONTACT US</a></li>
+            <li><Link to="/" className={`${styles.navLink} ${isActive('/') ? styles.navLinkActive : ''}`}>HOME</Link></li>
+            <li><a href="#about" className={styles.navLink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>ABOUT</a></li>
+            <li><a href="#product" className={styles.navLink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>PRODUCT</a></li>
+            <li><Link to="/contact" className={`${styles.navLink} ${isActive('/contact') ? styles.navLinkActive : ''}`}>CONTACT US</Link></li>
           </ul>
           <button
             className={styles.getStartedBtn}
@@ -119,10 +133,10 @@ function Header() {
           <div className={styles.mobileMenu} onClick={() => setMobileMenuOpen(false)}>
             <div className={styles.mobileMenuBox} onClick={e => e.stopPropagation()}>
               <ul className={styles.mobileNavLinks}>
-                <li><a href="#home" className={`${styles.mobileNavLink} ${activeSection === '#home' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#home'); setMobileMenuOpen(false); }}>HOME</a></li>
-                <li><a href="#about" className={`${styles.mobileNavLink} ${activeSection === '#about' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#about'); setMobileMenuOpen(false); }}>ABOUT</a></li>
-                <li><a href="#product" className={`${styles.mobileNavLink} ${activeSection === '#product' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#product'); setMobileMenuOpen(false); }}>PRODUCT</a></li>
-                <li><a href="#contact" className={`${styles.mobileNavLink} ${activeSection === '#contact' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#contact'); setMobileMenuOpen(false); }}>CONTACT US</a></li>
+                <li><Link to="/" className={`${styles.mobileNavLink} ${isActive('/') ? styles.mobileNavLinkActive : ''}`} onClick={() => setMobileMenuOpen(false)}>HOME</Link></li>
+                <li><a href="#about" className={styles.mobileNavLink} onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>ABOUT</a></li>
+                <li><a href="#product" className={styles.mobileNavLink} onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>PRODUCT</a></li>
+                <li><Link to="/contact" className={`${styles.mobileNavLink} ${isActive('/contact') ? styles.mobileNavLinkActive : ''}`} onClick={() => setMobileMenuOpen(false)}>CONTACT US</Link></li>
               </ul>
               <motion.button
                 className={styles.mobileGetStartedBtn}
@@ -169,7 +183,7 @@ function Header() {
         )}
       </nav>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

@@ -1,0 +1,175 @@
+import React, { useState, useEffect, useRef } from 'react'
+import styles from './header.module.css';
+import logoImg from '../../assets/images/axztech-logo.png';
+import { motion, AnimatePresence } from 'framer-motion';
+
+function Header() {
+  const [scrolled, setScrolled] = useState(false)
+  const companyName = 'AXZTECH IT SOLUTION';
+  const [displayed, setDisplayed] = useState('');
+  const indexRef = useRef(0);
+  const timeoutRef = useRef(null);
+  const [btnHovered, setBtnHovered] = useState(false);
+  const [mobileBtnHovered, setMobileBtnHovered] = useState(false);
+  const [activeSection, setActiveSection] = useState('#home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10
+      setScrolled(isScrolled)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Improved typewriter animation (no missing/skipped letters)
+  useEffect(() => {
+    setDisplayed('');
+    indexRef.current = 0;
+    function typeNext() {
+      setDisplayed(companyName.slice(0, indexRef.current + 1));
+      if (indexRef.current < companyName.length - 1) {
+        indexRef.current++;
+        timeoutRef.current = setTimeout(typeNext, 220);
+      }
+    }
+    timeoutRef.current = setTimeout(typeNext, 220);
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileMenuOpen]);
+
+  return (
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+      <nav className={styles.nav}>
+        <div className={
+          mobileMenuOpen
+            ? `${styles.navContainer} ${styles.mobileMenuActive}`
+            : styles.navContainer
+        }>
+          <div className={styles.logo}>
+            <img src={logoImg} alt="AXZTECH IT SOLUTION" style={{ width: 32, height: 32, objectFit: 'contain', borderRadius: 6 }} />
+            <span className={`${styles.logoText} ${styles.desktopOnly}`} style={{ minWidth: '16ch' }}>
+              {displayed}
+            </span>
+          </div>
+          <ul className={styles.navLinks}>
+            <li><a href="#home" className={`${styles.navLink} ${activeSection === '#home' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#home')}>HOME</a></li>
+            <li><a href="#about" className={`${styles.navLink} ${activeSection === '#about' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#about')}>ABOUT</a></li>
+            <li><a href="#product" className={`${styles.navLink} ${activeSection === '#product' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#product')}>PRODUCT</a></li>
+            <li><a href="#contact" className={`${styles.navLink} ${activeSection === '#contact' ? styles.navLinkActive : ''}`} onClick={() => setActiveSection('#contact')}>CONTACT US</a></li>
+          </ul>
+          <button
+            className={styles.getStartedBtn}
+            style={{ padding: '8px 24px', fontSize: '1rem', position: 'relative', alignItems: 'center', justifyContent: 'center', height: 44 }}
+            onMouseEnter={() => setBtnHovered(true)}
+            onMouseLeave={() => setBtnHovered(false)}
+          >
+            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', height: '100%' }}>
+              <AnimatePresence initial={false}>
+                {!btnHovered && (
+                  <motion.span
+                    key="normal"
+                    initial={{ y: -24, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -24, opacity: 0, transition: { duration: 0.28, ease: 'easeIn' } }}
+                    transition={{ duration: 0.28, ease: 'easeOut' }}
+                    style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', textAlign: 'center' }}
+                  >
+                    GET STARTED
+                  </motion.span>
+                )}
+                {btnHovered && (
+                  <motion.span
+                    key="hover"
+                    initial={{ y: 24, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ opacity: 0, y: 0, transition: { duration: 0 } }}
+                    transition={{ duration: 0.32, ease: 'easeOut' }}
+                    style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', textAlign: 'center' }}
+                  >
+                    GET STARTED
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </span>
+          </button>
+          {/* Burger menu button for mobile */}
+          <button
+            className={styles.burger}
+            aria-label="Open menu"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+          >
+            <span className={styles.burgerBar} style={{ transform: mobileMenuOpen ? 'rotate(45deg) translateY(8px)' : 'none' }} />
+            <span className={styles.burgerBar} style={{ opacity: mobileMenuOpen ? 0 : 1 }} />
+            <span className={styles.burgerBar} style={{ transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-8px)' : 'none' }} />
+          </button>
+        </div>
+        {/* Mobile menu overlay */}
+        {mobileMenuOpen && (
+          <div className={styles.mobileMenu} onClick={() => setMobileMenuOpen(false)}>
+            <div className={styles.mobileMenuBox} onClick={e => e.stopPropagation()}>
+              <ul className={styles.mobileNavLinks}>
+                <li><a href="#home" className={`${styles.mobileNavLink} ${activeSection === '#home' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#home'); setMobileMenuOpen(false); }}>HOME</a></li>
+                <li><a href="#about" className={`${styles.mobileNavLink} ${activeSection === '#about' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#about'); setMobileMenuOpen(false); }}>ABOUT</a></li>
+                <li><a href="#product" className={`${styles.mobileNavLink} ${activeSection === '#product' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#product'); setMobileMenuOpen(false); }}>PRODUCT</a></li>
+                <li><a href="#contact" className={`${styles.mobileNavLink} ${activeSection === '#contact' ? styles.mobileNavLinkActive : ''}`} onClick={() => { setActiveSection('#contact'); setMobileMenuOpen(false); }}>CONTACT US</a></li>
+              </ul>
+              <motion.button
+                className={styles.mobileGetStartedBtn}
+                onClick={() => setMobileMenuOpen(false)}
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.38, ease: 'easeOut' }}
+                onMouseEnter={() => setMobileBtnHovered(true)}
+                onMouseLeave={() => setMobileBtnHovered(false)}
+                onTouchStart={() => setMobileBtnHovered(true)}
+                onTouchEnd={() => setMobileBtnHovered(false)}
+              >
+                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', height: '100%', width: '100%', overflow: 'hidden' }}>
+                  <AnimatePresence initial={false}>
+                    {!mobileBtnHovered && (
+                      <motion.span
+                        key="normal-mobile"
+                        initial={{ y: -24, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -24, opacity: 0, transition: { duration: 0.28, ease: 'easeIn' } }}
+                        transition={{ duration: 0.28, ease: 'easeOut' }}
+                        style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', textAlign: 'center' }}
+                      >
+                        GET STARTED
+                      </motion.span>
+                    )}
+                    {mobileBtnHovered && (
+                      <motion.span
+                        key="hover-mobile"
+                        initial={{ y: 24, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ opacity: 0, y: 0, transition: { duration: 0 } }}
+                        transition={{ duration: 0.32, ease: 'easeOut' }}
+                        style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', textAlign: 'center' }}
+                      >
+                        GET STARTED
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </span>
+              </motion.button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  )
+}
+
+export default Header

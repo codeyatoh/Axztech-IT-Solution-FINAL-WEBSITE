@@ -1,0 +1,36 @@
+.defaultButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+  }
+  .primaryButton {
+    composes: defaultButton;
+    background-color: #B8CFCE;
+    color: #333446;
+    border: none;
+  }
+  .primaryButton:hover {
+    background-color: #EAEFEF;
+  }
+  .secondaryButton {
+    composes: defaultButton;
+    background-color: transparent;
+    color: #EAEFEF;
+    border: 1px solid #7F8CAA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .secondaryButton:hover {
+    background-color: rgba(184, 207, 206, 0.1);
+  }
+  @media (max-width: 768px) {
+    .defaultButton {
+      width: 100%;
+      max-width: 300px;
+    }
+  }

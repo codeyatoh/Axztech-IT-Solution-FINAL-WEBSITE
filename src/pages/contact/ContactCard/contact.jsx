@@ -95,10 +95,10 @@ const ContactForm = () => {
           </div>
         </div>
         <div className={styles.formContent}>
-          <h1 className={styles.title}>Contact Us</h1>
+          <h1 className={styles.title}>Send Us a Message</h1>
           <p className={styles.subtitle}>
-            Have questions about our services? Fill out the form below and we'll
-            get back to you.
+          Have a question or want to learn more about our services? Fill out the form below and we'll get back 
+          to you as soon as possible.
           </p>
           <form onSubmit={handleSubmit}>
             <div className={styles.formRow}>
@@ -145,7 +145,7 @@ const ContactForm = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className={styles.input}
-                  placeholder="(555) 123-4567"
+                  placeholder="Eg. 0935 391 9496"
                 />
               </div>
               <div className={styles.formGroup}>

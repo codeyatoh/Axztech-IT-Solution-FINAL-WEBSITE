@@ -1,0 +1,110 @@
+.whyChooseContainer {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #f7f7f7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.whyChooseTitle {
+    font-size: 48px;
+    text-align: center;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.whyChooseSubtitle {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.whyChooseCards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.whyChooseCard {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.whyChooseCard:hover {
+    box-shadow: 0 12px 32px rgba(51,52,70,0.18);
+    transform: translateY(-8px);
+}
+.cardTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 20px;
+}
+.cardDescription {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+}
+.accentCard {
+    position: relative;
+    overflow: hidden;
+}
+.accentOverlay {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, rgba(220, 235, 113, 0.7), rgba(148, 216, 45, 0.7));
+    border-radius: 50%;
+    z-index: 0;
+}
+.badge {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #0078d7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.badge span {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+.accessButton {
+    background-color: #000;
+    color: #f8e71c;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: 0;
+    cursor: pointer;
+    align-self: flex-start;
+    z-index: 1;
+}
+@media (max-width: 900px) {
+    .whyChooseCards {
+      flex-direction: column;
+    }
+    .whyChooseCard {
+      margin-bottom: 20px;
+    }
+}

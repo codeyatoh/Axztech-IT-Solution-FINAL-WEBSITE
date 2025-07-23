@@ -78,8 +78,8 @@ function Header() {
           </div>
           <ul className={styles.navLinks}>
             <li><Link to="/" className={`${styles.navLink} ${isActive('/') ? styles.navLinkActive : ''}`}>HOME</Link></li>
-            <li><Link to="/aboutUs" className={`${styles.navLink} ${isActive('/aboutUs') ? styles.navLinkActive : ''}`}>ABOUT</Link></li>
-            <li><a href="#product" className={styles.navLink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>PRODUCT</a></li>
+            <li><a href="#about" className={styles.navLink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>ABOUT</a></li>
+            <li><Link to="/products" className={`${styles.navLink} ${isActive('/products') ? styles.navLinkActive : ''}`}>PRODUCTS</Link></li>
             <li><Link to="/contact" className={`${styles.navLink} ${isActive('/contact') ? styles.navLinkActive : ''}`}>CONTACT US</Link></li>
           </ul>
           <button
@@ -134,8 +134,8 @@ function Header() {
             <div className={styles.mobileMenuBox} onClick={e => e.stopPropagation()}>
               <ul className={styles.mobileNavLinks}>
                 <li><Link to="/" className={`${styles.mobileNavLink} ${isActive('/') ? styles.mobileNavLinkActive : ''}`} onClick={() => setMobileMenuOpen(false)}>HOME</Link></li>
-                <li><Link to="/aboutUs" className={`${styles.mobileNavLink} ${isActive('/aboutUs') ? styles.mobileNavLinkActive : ''}`} onClick={() => setMobileMenuOpen(false)}>ABOUT</Link></li>
-                <li><a href="#product" className={styles.mobileNavLink} onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>PRODUCT</a></li>
+                <li><a href="#about" className={styles.mobileNavLink} onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>ABOUT</a></li>
+                <li><Link to="/products" className={`${styles.mobileNavLink} ${isActive('/products') ? styles.mobileNavLinkActive : ''}`} onClick={() => setMobileMenuOpen(false)}>PRODUCTS</Link></li>
                 <li><Link to="/contact" className={`${styles.mobileNavLink} ${isActive('/contact') ? styles.mobileNavLinkActive : ''}`} onClick={() => setMobileMenuOpen(false)}>CONTACT US</Link></li>
               </ul>
               <motion.button

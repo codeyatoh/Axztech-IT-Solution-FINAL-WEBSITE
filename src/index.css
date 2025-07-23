@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
   scroll-behavior: smooth;
 }
 

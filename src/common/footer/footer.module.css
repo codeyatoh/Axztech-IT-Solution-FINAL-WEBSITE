@@ -1,6 +1,6 @@
 /* Add to the top for global font style in footer */
 .footer, .footer * {
-  font-family: 'Inter', 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
   box-sizing: border-box;
 }
 /* Fix width to 100% and remove overflow-x and 100vw */

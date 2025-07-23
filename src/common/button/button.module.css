@@ -6,17 +6,24 @@
     cursor: pointer;
     transition: all 0.3s ease;
     min-width: 180px;
-  }
-  .primaryButton {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    line-height: 1;
+}
+.primaryButton {
     composes: defaultButton;
     background-color: #B8CFCE;
     color: #333446;
     border: none;
-  }
-  .primaryButton:hover {
+}
+.primaryButton:hover {
     background-color: #EAEFEF;
-  }
-  .secondaryButton {
+}
+.secondaryButton {
     composes: defaultButton;
     background-color: transparent;
     color: #EAEFEF;
@@ -24,13 +31,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .secondaryButton:hover {
+}
+.secondaryButton:hover {
     background-color: rgba(184, 207, 206, 0.1);
-  }
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .defaultButton {
       width: 100%;
       max-width: 300px;
     }
-  }
+}

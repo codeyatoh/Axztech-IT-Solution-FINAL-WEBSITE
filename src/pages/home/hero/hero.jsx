@@ -9,20 +9,16 @@ const Hero = () => {
           <div className={styles.heroContentBox}>
             <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>
-                The AI note taker.<br />
-                Without a bot.
+                Innovative IT<br />
+                Solutions for Your<br />
+                Business
               </h1>
               <div className={styles.heroTaglines}>
-                <p>Every <span className={styles.highlight}>meeting</span>, captured.</p>
-                <p>Every <span className={styles.highlight}>decision</span>, actionable.</p>
-                <p>Everywhere, <span className={styles.highlight}>seamless</span>.</p>
+                <p>Empowering businesses with cutting-edge technology<br />and expert IT services.</p>
               </div>
               <div className={styles.buttonGroup}>
                 <Button primary>Explore our products</Button>
                 <Button secondary>Contact us</Button>
-              </div>
-              <div className={styles.version}>
-                v4.2.3 | macOS 13+ | Windows 10+
               </div>
             </div>
           </div>

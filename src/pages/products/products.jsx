@@ -1,5 +1,6 @@
 import React from 'react';
 import logoImg from '../../assets/images/axztech-logo.png';
+import FeaturesSection from './KeyFeatureCards/KeyFeatureCards';
 
 // Minimalist SVG icons for feature cards
 const SecurityIcon = (
@@ -99,6 +100,8 @@ const Products = () => {
           />
         </div>
       </div>
+      {/* Key Features Section */}
+      <FeaturesSection />
       <style>{`
         @media (max-width: 900px) {
           div[style*='flex-direction: row'] {

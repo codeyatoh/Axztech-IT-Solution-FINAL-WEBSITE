@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import logoImg from '../../assets/images/axztech-logo.png';
 import FeaturesSection from './KeyFeatureCards/KeyFeatureCards';
 import PricingSelection from './PricingSelection/PricingSelection';
@@ -49,41 +50,44 @@ const features = [
 
 const Products = () => {
   return (
-    <div className={styles.productsPageBg}>
+    <motion.div className={styles.productsPageBg} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, type: 'tween' }}>
       <div className={styles.productsRow}>
         {/* Left: Content */}
-        <div className={styles.productsContent}>
-          <h1 className={styles.productsTitle}>
+        <motion.div className={styles.productsContent} initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, type: 'tween' }}>
+          <motion.h1 className={styles.productsTitle} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.1, type: 'tween' }}>
             Solutions Server Portal <span className={styles.productsTitleAccent}>(SSP)</span>
-          </h1>
-          <div className={styles.productsDesc}>
+          </motion.h1>
+          <motion.div className={styles.productsDesc} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.2, type: 'tween' }}>
             Elevate your business operations with our enterprise-grade platform designed for modern organizations seeking reliability, protection, and growth.
-          </div>
+          </motion.div>
           {/* Feature Cards Section */}
           <div className={styles.featureCardsSection}>
             {features.map((feature, idx) => (
-              <div
+              <motion.div
                 key={idx}
                 className={styles.featureCard}
-                style={{ animation: `fadeInCard 0.7s ${0.1 + idx * 0.13}s forwards` }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 1, delay: 0.25 + idx * 0.13, type: 'tween' }}
               >
                 <div className={styles.featureIcon}>{feature.icon}</div>
                 <div>
                   <div className={styles.featureTitle}>{feature.title}</div>
                   <div className={styles.featureDescription}>{feature.description}</div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
         {/* Right: Logo */}
-        <div className={styles.productsLogoBox}>
+        <motion.div className={styles.productsLogoBox} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, type: 'tween' }}>
           <img
             src={logoImg}
             alt="AXZTECH IT SOLUTION"
             className={styles.productsLogo}
           />
-        </div>
+        </motion.div>
       </div>
       {/* Key Features Section */}
       <FeaturesSection />
@@ -92,7 +96,7 @@ const Products = () => {
         <PricingSelection />
       </div>
       <CustomSolution />
-    </div>
+    </motion.div>
   );
 };
 

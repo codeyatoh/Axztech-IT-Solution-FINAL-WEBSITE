@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   MessageSquare,
   User,
@@ -45,9 +46,9 @@ const ContactForm = () => {
     alert('Message sent successfully!');
   };
   return (
-    <div className={styles.container} style={{ paddingTop: '1.5rem' }}>
-      <div className={styles.formCard}>
-        <div className={styles.sidebar}>
+    <motion.div className={styles.container} style={{ paddingTop: '1.5rem' }} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, type: 'tween' }}>
+      <motion.div className={styles.formCard} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.1, type: 'tween' }}>
+        <motion.div className={styles.sidebar} initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.2, type: 'tween' }}>
           <h2 className={styles.contactTitle}>Get in Touch</h2>
           <div className={styles.contactInfo}>
             <div className={styles.infoItem}>
@@ -93,8 +94,8 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.formContent}>
+        </motion.div>
+        <motion.div className={styles.formContent} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.2, type: 'tween' }}>
           <h1 className={styles.title}>Send Us a Message</h1>
           <p className={styles.subtitle}>
           Have a question or want to learn more about our services? Fill out the form below and we'll get back 
@@ -221,9 +222,9 @@ const ContactForm = () => {
               Send Message
             </button>
           </form>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

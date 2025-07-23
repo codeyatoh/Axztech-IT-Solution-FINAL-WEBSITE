@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './PricingSelection.module.css';
 import PricingCard from '../PricingCard/PricingCard';
 import { CheckIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const PricingSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -117,13 +118,13 @@ const PricingSection = () => {
   const visibleCards = pricingPlans.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
-    <div className={styles.pricingSectionWrapper}>
-      <div className={styles.pricingSection}>
-        <div className={styles.pricingHeader}>
+    <motion.div className={styles.pricingSectionWrapper} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, type: 'tween' }}>
+      <motion.div className={styles.pricingSection} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.1, type: 'tween' }}>
+        <motion.div className={styles.pricingHeader} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.2, type: 'tween' }}>
           <h1 className={styles.title}>SSP Pricing Plans</h1>
-          <p className={styles.subtitle}>Choose the plan that best fits your business needs and budget</p>
-        </div>
-        <div className={styles.carouselContainer}>
+          <motion.p className={styles.subtitle} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.3, type: 'tween' }}>Choose the plan that best fits your business needs and budget</motion.p>
+        </motion.div>
+        <motion.div className={styles.carouselContainer} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 1, delay: 0.4, type: 'tween' }}>
           <div className={styles.navButtonsTop}>
             <button 
               className={`${styles.navButton} ${styles.prevButton}`}
@@ -140,23 +141,30 @@ const PricingSection = () => {
           </div>
           <div className={styles.pricingCardsContainer}>
             {visibleCards.map((plan, index) => (
-              <PricingCard 
+              <motion.div
                 key={currentIndex + index}
-                title={plan.title}
-                subtitle={plan.subtitle}
-                price={plan.price}
-                period={plan.period}
-                description={plan.description}
-                features={plan.features}
-                isPopular={false}
-                color={plan.color}
-                icon={CheckIcon}
-              />
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 1, delay: 0.5 + index * 0.13, type: 'tween' }}
+              >
+                <PricingCard 
+                  title={plan.title}
+                  subtitle={plan.subtitle}
+                  price={plan.price}
+                  period={plan.period}
+                  description={plan.description}
+                  features={plan.features}
+                  isPopular={false}
+                  color={plan.color}
+                  icon={CheckIcon}
+                />
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

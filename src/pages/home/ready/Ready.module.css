@@ -1,0 +1,99 @@
+.ready-section {
+    width: 100%;
+    min-height: 500px;
+    background: linear-gradient(135deg, #e6f4f1 0%, #d1e9e3 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .ready-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 25%, transparent 25%),
+                      linear-gradient(225deg, rgba(255,255,255,0.2) 25%, transparent 25%),
+                      linear-gradient(315deg, rgba(255,255,255,0.2) 25%, transparent 25%),
+                      linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%);
+    background-size: 100px 100px;
+    z-index: 1;
+  }
+  .ready-container {
+    max-width: 800px;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .badge {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .heading {
+    font-size: 42px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  .subtext {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  .cta-button {
+    padding: 14px 32px;
+    background-color: #fff06e;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: #ffed4a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 32px;
+    }
+    .subtext {
+      font-size: 16px;
+    }
+  }
+
+.section {
+  padding: 60px 20px;
+  background: #f5f7f6;
+  text-align: center;
+}
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #23242b;
+  margin-bottom: 1rem;
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: #7F8CAA;
+}
+.section :global(button) {
+  display: block;
+  margin: 2rem auto 0 auto;
+}

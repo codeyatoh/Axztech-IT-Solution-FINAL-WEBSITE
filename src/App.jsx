@@ -7,7 +7,7 @@ import AppRoutes from './routes/routes';
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <div style={{ minHeight: '100vh' }}>
         <Header />
         <main style={{ flex: 1, paddingTop: 80 }}>
           <AppRoutes />

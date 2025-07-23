@@ -1,6 +1,8 @@
 import React from 'react';
 import logoImg from '../../assets/images/axztech-logo.png';
 import FeaturesSection from './KeyFeatureCards/KeyFeatureCards';
+import PricingSelection from './PricingSelection/PricingSelection';
+import styles from './products.module.css';
 
 // Minimalist SVG icons for feature cards
 const SecurityIcon = (
@@ -47,22 +49,31 @@ const features = [
 const Products = () => {
   return (
     <div style={{ minHeight: '100vh', background: '#fafbfc', padding: 0, margin: 0 }}>
-      <div style={{
-        maxWidth: 1100,
-        margin: '0 auto',
-        padding: '16px 0 0 0',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 24,
-        justifyContent: 'center',
-      }}>
+      <div
+        style={{
+          maxWidth: 1100,
+          margin: '0 auto',
+          padding: '16px 0 0 0',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 24,
+          justifyContent: 'center',
+        }}
+        className={styles.responsiveRow}
+      >
         {/* Left: Content */}
         <div style={{ flex: 2, minWidth: 320, maxWidth: 650 }}>
-          <h1 style={{ fontSize: '2.7rem', fontWeight: 800, textAlign: 'left', marginBottom: 6, color: '#23272F', letterSpacing: '-1px', lineHeight: 1.1 }}>
-            Solutions Server Portal <span style={{ color: '#3B82F6', fontWeight: 800 }}>(SSP)</span>
+          <h1
+            style={{ fontSize: '2.7rem', fontWeight: 800, textAlign: 'left', marginBottom: 6, color: '#23272F', letterSpacing: '-1px', lineHeight: 1.1 }}
+            className={styles.responsiveTitle}
+          >
+            Solutions Server Portal <span style={{ color: '#3B82F6', fontWeight: 800 }} className={styles.responsiveTitle}>(SSP)</span>
           </h1>
-          <div style={{ textAlign: 'left', fontSize: '1.18rem', color: '#4B5563', fontWeight: 400, marginBottom: 16, maxWidth: 600, lineHeight: 1.5 }}>
+          <div
+            style={{ textAlign: 'left', fontSize: '1.18rem', color: '#4B5563', fontWeight: 400, marginBottom: 16, maxWidth: 600, lineHeight: 1.5 }}
+            className={styles.responsiveDesc}
+          >
             Elevate your business operations with our enterprise-grade platform designed for modern organizations seeking reliability, protection, and growth.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: 650 }}>
@@ -92,7 +103,9 @@ const Products = () => {
           </div>
         </div>
         {/* Right: Logo */}
-        <div style={{ flex: 1, minWidth: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+        <div style={{ flex: 1, minWidth: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}
+         className={styles.responsiveLogo}
+        >
           <img
             src={logoImg}
             alt="AXZTECH IT SOLUTION"
@@ -102,33 +115,10 @@ const Products = () => {
       </div>
       {/* Key Features Section */}
       <FeaturesSection />
-      <style>{`
-        @media (max-width: 900px) {
-          div[style*='flex-direction: row'] {
-            flex-direction: column !important;
-            gap: 16px !important;
-            align-items: center !important;
-          }
-          div[style*='flex: 1'][style*='min-width: 100'] {
-            margin-top: 16px !important;
-            justify-content: center !important;
-          }
-          h1 {
-            text-align: center !important;
-          }
-          div[style*='text-align: left'] {
-            text-align: center !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-          }
-        }
-        @keyframes fadeInCard {
-          to {
-            opacity: 1;
-            transform: translateY(0px);
-          }
-        }
-      `}</style>
+      {/* Pricing Section */}
+      <div style={{ marginTop: 40 }}>
+        <PricingSelection />
+      </div>
     </div>
   );
 };

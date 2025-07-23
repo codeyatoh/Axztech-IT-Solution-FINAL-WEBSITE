@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from './common/header/header'
+import Footer from './common/footer/footer'
 
 function App() {
   return (
     <div>
       <Header />
-      {/* Other components or content can go here */}
+      <Footer />
     </div>
   )
 }

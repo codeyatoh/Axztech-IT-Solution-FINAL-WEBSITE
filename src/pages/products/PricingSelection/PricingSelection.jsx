@@ -48,15 +48,15 @@ const PricingSection = () => {
     },
     {
       title: "Pro",
-      subtitle: "SME & Enterprise",
-      price: "₱15,000–₱25,000",
-      period: "/month",
-      description: "Fully customizable systems with comprehensive tools and support.",
+      subtitle: "",
+      price: "Contact Us",
+      period: "",
+      description: "Custom enterprise solutions with tailored features, integrations, and dedicated support. Contact us for a personalized quote that fits your business needs.",
       features: [
-        "Full access to all SSP modules and features",
-        "Dedicated technical support and system updates",
-        "Financial tracking and business analytics dashboard",
-        "Enterprises needing custom modules, integrations, and scalability"
+        "All SSP modules and advanced features",
+        "Dedicated technical support and updates",
+        "Business analytics and financial tracking",
+        "Custom modules, integrations, and scalability"
       ],
       color: "green"
     },

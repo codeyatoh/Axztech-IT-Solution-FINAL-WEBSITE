@@ -2,6 +2,7 @@ import React from 'react';
 import logoImg from '../../assets/images/axztech-logo.png';
 import FeaturesSection from './KeyFeatureCards/KeyFeatureCards';
 import PricingSelection from './PricingSelection/PricingSelection';
+import CustomSolution from './CustomSolution/CustomSolution';
 import styles from './products.module.css';
 
 // Minimalist SVG icons for feature cards
@@ -76,6 +77,7 @@ const Products = () => {
           >
             Elevate your business operations with our enterprise-grade platform designed for modern organizations seeking reliability, protection, and growth.
           </div>
+          {/* Feature Cards Section */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: 650 }}>
             {features.map((feature, idx) => (
               <div
@@ -88,8 +90,8 @@ const Products = () => {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: 14,
-                  opacity: 0,
-                  transform: 'translateY(30px)',
+                  opacity: 1,
+                  transform: 'none',
                   animation: `fadeInCard 0.7s ${0.1 + idx * 0.13}s forwards`
                 }}
               >
@@ -119,6 +121,7 @@ const Products = () => {
       <div style={{ marginTop: 40 }}>
         <PricingSelection />
       </div>
+      <CustomSolution />
     </div>
   );
 };

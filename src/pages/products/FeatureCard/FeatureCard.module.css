@@ -41,3 +41,24 @@
     line-height: 1.5;
     color: #4b5563;
   }
+
+@media (max-width: 900px) {
+  .card {
+    padding: 1rem 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    padding: 0.7rem 0.7rem;
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    padding: 0.5rem 0.5rem;
+  }
+}
+@media (max-width: 375px) {
+  .card {
+    padding: 0.4rem 0.3rem;
+  }
+}

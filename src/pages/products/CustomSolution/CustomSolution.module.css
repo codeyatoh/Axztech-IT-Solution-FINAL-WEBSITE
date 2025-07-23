@@ -58,16 +58,75 @@
   transform: scale(0.98);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  .sectionBg {
+    padding: 2rem 0.7rem 2rem 0.7rem;
+  }
   .headline {
-    font-size: 1.35rem;
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    margin-bottom: 0.7rem;
+    text-align: center;
+    max-width: 95vw;
+    word-break: break-word;
   }
   .description {
-    font-size: 0.98rem;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    max-width: 95vw;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-word;
+  }
+}
+@media (max-width: 600px) {
+  .sectionBg {
+    padding: 1rem 0.3rem 1rem 0.3rem;
+  }
+  .headline {
+    font-size: clamp(0.9rem, 7vw, 1.1rem);
+    margin-bottom: 0.5rem;
+  }
+  .description {
+    font-size: 0.8rem;
     max-width: 98vw;
+    margin-bottom: 0.8rem;
   }
   .ctaButton {
-    font-size: 0.98rem;
-    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.7rem;
+    width: 100%;
+    max-width: 340px;
+  }
+}
+@media (max-width: 480px) {
+  .sectionBg {
+    padding: 0.6rem 0.1rem 0.6rem 0.1rem;
+  }
+  .headline {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+  .description {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  .ctaButton {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.3rem;
+    max-width: 98vw;
+  }
+}
+@media (max-width: 375px) {
+  .headline {
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+  }
+  .description {
+    font-size: 0.6rem;
+  }
+  .ctaButton {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.1rem;
   }
 } 

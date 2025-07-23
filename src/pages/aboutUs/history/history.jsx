@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import styles from './history.module.css';
@@ -44,11 +45,11 @@ const History = () => {
     <div className={styles.aboutOuter}>
       <div className={styles.aboutBg}>
         <section className={styles.history}>
-          <div className={styles.heading}>
+          <motion.div className={styles.heading} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, type: 'spring', bounce: 0.3 }}>
             <h2>AXZTECH HISTORY</h2>
             <div className={styles.underline}></div>
-          </div>
-          <div className={styles.content}>
+          </motion.div>
+          <motion.div className={styles.content} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, delay: 0.1, type: 'spring', bounce: 0.3 }}>
             <p>
               AXZTECH began as a freelance software development hobby in 2023. In 2024, it was formalized into a business. 
               Facing the typical challenges of a new venture, the founder realized the absence of local IT service platforms 
@@ -59,8 +60,8 @@ const History = () => {
               through a SaaS platform built as a Progressive Web App (PWA). This shift aligns with Sustainable Development 
               Goal #8: Decent Work and Economic Growth.
             </p>
-          </div>
-          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          </motion.div>
+          <motion.div style={{ maxWidth: 900, margin: '0 auto' }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, delay: 0.2, type: 'spring', bounce: 0.3 }}>
             <VerticalTimeline>
               {milestoneData.map((milestone, idx) => (
                 <VerticalTimelineElement
@@ -76,7 +77,7 @@ const History = () => {
                 </VerticalTimelineElement>
               ))}
             </VerticalTimeline>
-          </div>
+          </motion.div>
         </section>
       </div>
     </div>

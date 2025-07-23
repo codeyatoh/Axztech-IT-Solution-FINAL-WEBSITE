@@ -15,19 +15,23 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     letter-spacing: -0.025em;
-    color: #333446;
+    /* color: #333446; */
     line-height: 1.1;
+    background: linear-gradient(90deg, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .subtitle {
     font-size: 2.5rem;
     font-weight: 400;
     margin-bottom: 2.5rem;
     letter-spacing: -0.025em;
-    color: #7F8CAA;
+    color: #333446;
 }
 .description {
     font-size: 1.125rem;
-    color: #7F8CAA;
+    color: #333446;
     margin-bottom: 3rem;
     max-width: 36rem;
 }

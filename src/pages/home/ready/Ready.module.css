@@ -49,7 +49,7 @@
   }
   .subtext {
     font-size: 18px;
-    color: #444;
+    color: #333446;
     margin-bottom: 40px;
     line-height: 1.6;
   }
@@ -86,12 +86,15 @@
 .title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #23242b;
   margin-bottom: 1rem;
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .subtitle {
   font-size: 1.2rem;
-  color: #7F8CAA;
+  color: #333446;
 }
 .section :global(button) {
   display: block;

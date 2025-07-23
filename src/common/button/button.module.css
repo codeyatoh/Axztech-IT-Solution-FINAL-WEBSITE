@@ -16,24 +16,26 @@
 }
 .primaryButton {
     composes: defaultButton;
-    background-color: #B8CFCE;
-    color: #333446;
+    background-color: #333446;
+    color: #EAEFEF;
     border: none;
 }
 .primaryButton:hover {
     background-color: #EAEFEF;
+    color: #333446;
 }
 .secondaryButton {
     composes: defaultButton;
-    background-color: transparent;
-    color: #EAEFEF;
-    border: 1px solid #7F8CAA;
+    background-color: #EAEFEF;
+    color: #333446;
+    border: 1px solid #333446;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .secondaryButton:hover {
-    background-color: rgba(184, 207, 206, 0.1);
+    background-color: #333446;
+    color: #EAEFEF;
 }
 @media (max-width: 768px) {
     .defaultButton {

@@ -9,11 +9,14 @@
 
 .heroBg {
     width: 100%;
-    background-color: #333446;
+    background-color: #B8CFCE;
     border-radius: 1rem;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 640px) {
     .heroBg {
@@ -46,20 +49,24 @@
   .heroTitle {
     font-size: 4rem;
     font-weight: 700;
-    color: #EAEFEF;
+    /* color: #EAEFEF; */
     line-height: 1.2;
     margin-bottom: 2rem;
+    background: linear-gradient(90deg, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .heroTaglines {
     margin-bottom: 3rem;
   }
   .heroTaglines p {
     font-size: 1.25rem;
-    color: #EAEFEF;
+    color: #333446;
     margin: 0.5rem 0;
   }
   .highlight {
-    color: #B8CFCE;
+    color: #333446;
     font-weight: 500;
   }
   .buttonGroup {
@@ -81,3 +88,14 @@
       align-items: center;
     }
   }
+.cursor {
+  display: inline-block;
+  width: 1ch;
+}
+.cursor.blink {
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

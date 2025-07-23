@@ -9,12 +9,15 @@
 
 .aboutBg {
   width: 100%;
-  background-color: #333446;
+  background-color: #B8CFCE;
   border-radius: 1rem;
   box-sizing: border-box;
   padding: 5rem 0;
   margin: 0;
   min-height: 80vh;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 640px) {
   .aboutBg {
@@ -43,8 +46,12 @@
 }
 .heading h2 {
   font-size: 2.5rem;
-  color: #EAEFEF;
+  /* color: #EAEFEF; */
   font-weight: bold;
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .underline {
   height: 4px;
@@ -61,7 +68,7 @@
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 3rem;
-  color: #EAEFEF;
+  color: #333446;
 }
 .features {
   display: flex;

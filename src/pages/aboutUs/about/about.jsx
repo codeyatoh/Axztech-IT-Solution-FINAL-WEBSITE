@@ -17,34 +17,32 @@ const About = () => {
             <h2>About Axztech IT Solutions</h2>
             <div className={styles.underline}></div>
           </motion.div>
-          <motion.div className={styles.content} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <p>
-              We are a leading provider of innovative IT solutions dedicated to helping 
-              businesses succeed in the digital age.
-            </p>
-            <div className={styles.features}>
-              {[{
-                icon: <Code2Icon size={32} />, title: 'Custom Solutions', desc: 'Tailored software development for your specific business needs'
-              }, {
-                icon: <BarChartIcon size={32} />, title: 'Data Analytics', desc: 'Transform your data into actionable business insights'
-              }, {
-                icon: <TrendingUpIcon size={32} />, title: 'Digital Growth', desc: 'Strategies to boost your online presence and market reach'
-              }].map((f, i) => (
-                <motion.div
-                  className={styles.feature}
-                  key={f.title}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={featureVariants}
-                >
-                  {f.icon}
-                  <h3>{f.title}</h3>
-                  <p>{f.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+          <motion.p className={styles.intro} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.2 }}>
+            We are a leading provider of innovative IT solutions dedicated to helping 
+            businesses succeed in the digital age.
+          </motion.p>
+          <motion.div className={styles.features} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.2 }}>
+            {[{
+              icon: <Code2Icon size={32} />, title: 'Custom Solutions', desc: 'Tailored software development for your specific business needs'
+            }, {
+              icon: <BarChartIcon size={32} />, title: 'Data Analytics', desc: 'Transform your data into actionable business insights'
+            }, {
+              icon: <TrendingUpIcon size={32} />, title: 'Digital Growth', desc: 'Strategies to boost your online presence and market reach'
+            }].map((f, i) => (
+              <motion.div
+                className={styles.feature}
+                key={f.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={featureVariants}
+              >
+                {f.icon}
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

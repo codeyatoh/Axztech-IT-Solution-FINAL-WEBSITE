@@ -25,11 +25,8 @@
     justify-content: space-between;
     padding: 0 32px;
     min-height: 56px;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background: #fdfbfa;
     border-radius: 32px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     border: none;
     width: 900px;
     max-width: 90vw;
@@ -37,6 +34,8 @@
     white-space: nowrap;
     min-width: 0;
     /* margin-top: 16px;  Removed for sticky/fixed header */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
   
   .logo {
@@ -51,8 +50,8 @@
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: #333446;
-    text-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+    color: #1a1a1a;
+    text-shadow: none;
   }
   
   .desktopOnly {
@@ -70,7 +69,7 @@
   .navLink {
     font-family: 'Inter', 'Poppins', Arial, Helvetica, sans-serif;
     text-decoration: none;
-    color: #333446;
+    color: #1a1a1a;
     font-weight: 400;
     font-size: 0.97rem;
     padding: 8px 18px;
@@ -81,27 +80,27 @@
   }
   
   .navLink:hover {
-    background: rgba(127, 140, 170, 0.18);
-    color: #333446;
+    background: #1400fe;
+    color: #fdfbfa;
   }
   
   .navLinkActive {
-    color: #333446;
+    color: #1400fe;
     font-weight: 600;
-    background: rgba(127, 140, 170, 0.18);
+    background: #fdfbfa;
   }
   
   .getStartedBtn {
     font-family: 'Inter', 'Poppins', Arial, Helvetica, sans-serif;
-    background: #333446;
-    color: #EAEFEF;
+    background: #1400fe;
+    color: #fdfbfa;
     border: none;
     padding: 10px 24px;
     border-radius: 12px;
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s;
+    transition: background 0.2s;
     white-space: nowrap;
     margin-left: 8px;
     display: flex;
@@ -112,19 +111,19 @@
     width: max-content;
   }
   
-  .getStartedBtn:hover {
-    background: #333;
-    box-shadow: 0 2px 8px rgba(26, 26, 26, 0.12);
-  }
-  
+  .getStartedBtn:hover,
   .getStartedBtn:active {
-    background: #222;
+    background: #1400fe;
+    color: #fdfbfa;
   }
   
   /* Backdrop filter support */
   @supports (backdrop-filter: blur(24px)) {
     .navContainer {
-      background: rgba(255, 255, 255, 0.6);
+      background: #fdfbfa;
+      border: 2px solid #1400fe;
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
     }
   }
 
@@ -143,12 +142,12 @@
 }
 
 .burgerBar {
-  width: 26px;
-  height: 3px;
-  background: #222;
-  margin: 3px 0;
-  border-radius: 2px;
-  transition: 0.3s;
+    width: 26px;
+    height: 3px;
+    background: #1a1a1a;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
 .mobileMenu {
@@ -167,18 +166,17 @@
 }
 
 .mobileMenuBox {
-  background:rgba(184, 207, 206, 1.00);
-  border-radius: 20px;
-  box-shadow: 0 2px 24px rgba(0,0,0,0.18);
-  padding: 36px 24px 28px 24px;
-  width: 900px;
-  max-width: 90vw;
-  margin-top: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  pointer-events: auto;
+    background: #fdfbfa;
+    border-radius: 20px;
+    padding: 36px 24px 28px 24px;
+    width: 900px;
+    max-width: 90vw;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    pointer-events: auto;
 }
 
 .mobileNavLinks {
@@ -195,7 +193,7 @@
 .mobileNavLink {
   font-family: 'Inter', 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 1.08rem;
-  color: #333446;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 400;
   padding: 12px 18px;
@@ -206,14 +204,14 @@
 }
 
 .mobileNavLink:hover {
-  background: rgba(127, 140, 170, 0.18);
-  color: #333446;
+  background: #1400fe;
+  color: #fdfbfa;
 }
 
 .mobileGetStartedBtn {
   font-family: 'Inter', 'Poppins', Arial, Helvetica, sans-serif;
-  background: #333446;
-  color: #EAEFEF;
+  background: #1400fe;
+  color: #fdfbfa;
   border: none;
   border-radius: 12px;
   font-weight: 600;
@@ -223,8 +221,7 @@
   max-width: 340px;
   margin: 8px auto 0 auto;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(26, 26, 26, 0.10);
+  transition: background 0.2s;
   height: 44px;
   min-width: 120px;
   display: flex;
@@ -235,13 +232,14 @@
 }
 
 .mobileGetStartedBtn:hover {
-  background: #222;
+  background: #1400fe;
+  color: #fdfbfa;
 }
 
 .mobileNavLinkActive {
-  color: #333446;
+  color: #1400fe;
   font-weight: 600;
-  background: rgba(127, 140, 170, 0.18);
+  background: #fdfbfa;
 }
 
 /* Dark nav background when mobile menu is open */

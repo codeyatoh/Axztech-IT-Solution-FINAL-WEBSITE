@@ -13,29 +13,30 @@
     position: relative;
     overflow: hidden;
     line-height: 1;
+    border: none;
 }
 .primaryButton {
     composes: defaultButton;
-    background-color: #333446;
-    color: #EAEFEF;
-    border: none;
+    background-color: #1400fe;
+    color: #fdfbfa;
 }
-.primaryButton:hover {
-    background-color: #EAEFEF;
-    color: #333446;
+.primaryButton:hover,
+.primaryButton:focus {
+    background-color: #1400fe;
+    color: #fdfbfa;
+    /* No outline or border */
 }
 .secondaryButton {
     composes: defaultButton;
-    background-color: #EAEFEF;
-    color: #333446;
-    border: 1px solid #333446;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #cd0600;
+    color: #fdfbfa;
+    border: none;
 }
-.secondaryButton:hover {
-    background-color: #333446;
-    color: #EAEFEF;
+.secondaryButton:hover,
+.secondaryButton:focus {
+    background-color: #cd0600;
+    color: #fdfbfa;
+    /* No outline or border */
 }
 @media (max-width: 768px) {
     .defaultButton {

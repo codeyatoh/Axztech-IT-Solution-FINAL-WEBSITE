@@ -16,7 +16,7 @@ function OurServices() {
           {/* First card */}
           <div className={styles.card}>
             <div className={styles.cardImage}>
-              <FaServer size={48} color="#7F8CAA" />
+              <FaServer size={48} color="#1400fe" />
             </div>
             <div className={styles.cardDate}>For Businesses</div>
             <div className={styles.cardTitle}>Solutions System Portal</div>
@@ -26,7 +26,7 @@ function OurServices() {
           {/* Second card */}
           <div className={styles.card}>
             <div className={styles.cardImage}>
-              <FaMobileAlt size={48} color="#7F8CAA" />
+              <FaMobileAlt size={48} color="#1400fe" />
             </div>
             <div className={styles.cardDate}>Custom Mobile</div>
             <div className={styles.cardTitle}>Applications</div>
@@ -36,7 +36,7 @@ function OurServices() {
           {/* Third card */}
           <div className={styles.card}>
             <div className={styles.cardImage}>
-              <FaCode size={48} color="#7F8CAA" />
+              <FaCode size={48} color="#1400fe" />
             </div>
             <div className={styles.cardDate}>Custom Software</div>
             <div className={styles.cardTitle}>Development</div>

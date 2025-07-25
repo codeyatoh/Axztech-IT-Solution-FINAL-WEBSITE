@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    background-color: white;
+    background-color: #fdfbfa;
     padding: 4rem 1rem;
   }
   .wrapper {
@@ -14,22 +14,22 @@
   .header .title, .title {
     font-size: 2rem;
     font-weight: bold;
-    /* color: #333446; */
     margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, #1e40af, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #1400fe;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
   }
   .divider {
     width: 6rem;
     height: 0.25rem;
-    background-color: #7F8CAA;
+    background-color: #cd0600;
     margin: 0 auto;
     margin-bottom: 1rem;
   }
   .subtitle {
-    color: #7F8CAA;
+    color: #1a1a1a;
     max-width: 36rem;
     margin: 0 auto;
   }
@@ -40,7 +40,7 @@
     margin-bottom: 4rem;
   }
   .benefitCard {
-    background-color: #EAEFEF;
+    background-color: #fdfbfa;
     border-radius: 0.75rem;
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -49,10 +49,10 @@
   }
   .benefitCard:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px #1400fe;
   }
   .iconContainer {
-    background-color: #B8CFCE;
+    background-color: #1400fe;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
@@ -62,25 +62,25 @@
     margin-bottom: 1rem;
   }
   .checkIcon {
-    color: white;
+    color: #fdfbfa;
     font-size: 1.25rem;
     font-weight: bold;
   }
   .benefitTitle {
     font-weight: 600;
     font-size: 1.125rem;
-    color: #333446;
+    color: #1a1a1a;
     margin-bottom: 0.5rem;
   }
   .benefitDescription {
-    color: #7F8CAA;
+    color: #1a1a1a;
     font-size: 0.875rem;
   }
   .imageSection {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-color: #F5F7F7;
+    background-color: #fdfbfa;
     border-radius: 1rem;
     padding: 2rem;
   }
@@ -90,17 +90,17 @@
   .imageTitle {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #333446;
+    color: #1a1a1a;
     margin-bottom: 0.75rem;
   }
   .imageDescription {
-    color: #7F8CAA;
+    color: #1a1a1a;
   }
   .imageContainer {
     width: 100%;
     border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #1a1a1a;
   }
   .image {
     width: 100%;

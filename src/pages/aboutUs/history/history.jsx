@@ -40,16 +40,23 @@ const milestoneData = [
   }
 ];
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.7, type: 'spring', bounce: 0.3 }
+};
+
 const History = () => {
   return (
     <div className={styles.aboutOuter}>
       <div className={styles.aboutBg}>
         <section className={styles.history}>
-          <motion.div className={styles.heading} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, type: 'spring', bounce: 0.3 }}>
+          <motion.div className={styles.heading} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, type: 'spring', bounce: 0.3 }}>
             <h2>AXZTECH HISTORY</h2>
             <div className={styles.underline}></div>
           </motion.div>
-          <motion.div className={styles.content} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, delay: 0.1, type: 'spring', bounce: 0.3 }}>
+          <motion.div className={styles.content} {...fadeInUp}>
             <p>
               AXZTECH began as a freelance software development hobby in 2023. In 2024, it was formalized into a business. 
               Facing the typical challenges of a new venture, the founder realized the absence of local IT service platforms 
@@ -61,7 +68,7 @@ const History = () => {
               Goal #8: Decent Work and Economic Growth.
             </p>
           </motion.div>
-          <motion.div style={{ maxWidth: 900, margin: '0 auto' }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, delay: 0.2, type: 'spring', bounce: 0.3 }}>
+          <motion.div style={{ maxWidth: 900, margin: '0 auto' }} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.2 }}>
             <VerticalTimeline>
               {milestoneData.map((milestone, idx) => (
                 <VerticalTimelineElement

@@ -1,7 +1,15 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import styles from './MissionVision.module.css'
 import { EyeIcon, CompassIcon } from 'lucide-react'
-import { motion } from 'framer-motion'
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.7 }
+};
+
 function MissionVision() {
   return (
     <section className={styles.missionVisionSection}>
@@ -9,10 +17,8 @@ function MissionVision() {
         <div className={styles.missionVisionContainer}>
           <motion.div
             className={`${styles.card} ${styles.card1}`}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
+            {...fadeInUp}
+            transition={{ ...fadeInUp.transition, delay: 0.1 }}
           >
             <div className={styles.iconContainer}>
               <EyeIcon size={48} className={styles.icon} />
@@ -24,10 +30,8 @@ function MissionVision() {
           </motion.div>
           <motion.div
             className={`${styles.card} ${styles.card2}`}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true }}
+            {...fadeInUp}
+            transition={{ ...fadeInUp.transition, delay: 0.3 }}
           >
             <div className={styles.iconContainer}>
               <CompassIcon size={48} className={styles.icon} />

@@ -2,6 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Team.module.css'
 import rioImg from '../../../assets/images/Rio-Al-Di-Dompol.jpg';
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.7, type: 'spring', bounce: 0.3 }
+};
 const Team = () => {
   const teamMember = {
     name: 'Rio Al-Di Dompol',
@@ -11,7 +17,7 @@ const Team = () => {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <motion.div className={styles.header} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, type: 'spring', bounce: 0.3 }}>
+        <motion.div className={styles.header} {...fadeInUp}>
           <h2 className={styles.title}>Meet Our Team</h2>
           <div className={styles.divider}></div>
           <p className={styles.description}>
@@ -19,8 +25,8 @@ const Team = () => {
             solutions for businesses of all sizes.
           </p>
         </motion.div>
-        <motion.div className={styles.cardContainer} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, delay: 0.2, type: 'spring', bounce: 0.3 }}>
-          <motion.div className={styles.card} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, delay: 0.3, type: 'spring', bounce: 0.3 }}>
+        <motion.div className={styles.cardContainer} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.2 }}>
+          <motion.div className={styles.card} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.3 }}>
             <div className={styles.imageContainer}>
               {teamMember.image && (
                 <img

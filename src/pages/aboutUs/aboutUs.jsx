@@ -4,9 +4,11 @@ import History from './history/history'
 import Team from './Team/team'
 import WhyChooseUs from './whyChooseUs/whyChooseUs'
 import MissionVision from './MissionVision/MissionVision'
+import { useLocation } from 'react-router-dom';
 function AboutUs() {
+  const location = useLocation();
   return (
-    <div>
+    <div key={location.pathname}>
       <About />
       <History />
       <MissionVision />

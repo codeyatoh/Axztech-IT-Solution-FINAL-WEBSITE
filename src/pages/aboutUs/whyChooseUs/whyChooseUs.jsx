@@ -1,6 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './WhyChooseUs.module.css'
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.7, type: 'spring', bounce: 0.3 }
+};
 const WhyChooseUs = () => {
   const benefits = [
     {
@@ -32,20 +38,18 @@ const WhyChooseUs = () => {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <motion.div className={styles.header} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, type: 'spring', bounce: 0.3 }}>
+        <motion.div className={styles.header} {...fadeInUp}>
           <h2 className={styles.title}>Why Choose Us</h2>
           <div className={styles.divider}></div>
-          <motion.p className={styles.subtitle} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.1 }}>We deliver exceptional value through our expertise and commitment to excellence</motion.p>
+          <motion.p className={styles.subtitle} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>We deliver exceptional value through our expertise and commitment to excellence</motion.p>
         </motion.div>
         <div className={styles.benefitsGrid}>
           {benefits.map((benefit, i) => (
             <motion.div
               key={benefit.id}
               className={styles.benefitCard}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.15 + i * 0.12, type: 'spring', bounce: 0.3 }}
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.15 + i * 0.12 }}
             >
               <div className={styles.iconContainer}>
                 <span className={styles.checkIcon}>✓</span>
@@ -55,7 +59,7 @@ const WhyChooseUs = () => {
             </motion.div>
           ))}
         </div>
-        <motion.div className={styles.imageSection} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7, delay: 0.2, type: 'spring', bounce: 0.3 }}>
+        <motion.div className={styles.imageSection} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.2 }}>
           <div className={styles.imageText}>
             <h3 className={styles.imageTitle}>Trusted by businesses worldwide</h3>
             <p className={styles.imageDescription}>

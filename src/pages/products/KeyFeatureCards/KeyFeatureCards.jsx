@@ -37,37 +37,37 @@ const FeaturesSection = () => {
       id: 1,
       icon: <Shield className={styles.featureIcon} />,
       title: 'Enterprise-Grade Firewall Defense',
-      description: 'Real-time protection that blocks unauthorized access and advanced cyber threats.'
+      description: 'Military-grade protection system with advanced threat intelligence to neutralize unauthorized access attempts and sophisticated cyber threats in real-time.'
     },
     {
       id: 2,
       icon: <CloudUpload className={styles.featureIcon} />,
       title: 'Intelligent Data Backup Solution',
-      description: 'Automated backups with instant recovery to prevent data loss in any situation.'
+      description: 'Continuous automated backup orchestration with point-in-time recovery capabilities, ensuring zero data loss and rapid restoration during critical scenarios.'
     },
     {
       id: 3,
       icon: <Server className={styles.featureIcon} />,
       title: 'Dynamic Load Distribution',
-      description: 'AI-driven system that balances server workloads to ensure peak performance.'
+      description: 'AI-powered traffic management system that optimally balances workloads across server infrastructure, preventing bottlenecks and maintaining peak performance.'
     },
     {
       id: 4,
       icon: <Cloud className={styles.featureIcon} />,
       title: 'Seamless Cloud Ecosystem Integration',
-      description: 'Effortless connection with top cloud providers for unified, multi-cloud management.'
+      description: 'Frictionless integration with leading cloud service providers, enabling efficient hybrid and multi-cloud deployment strategies with centralized management.'
     },
     {
       id: 5,
       icon: <ShieldAlert className={styles.featureIcon} />,
       title: 'Comprehensive DDoS Mitigation',
-      description: 'Instantly detects and stops distributed attacks to keep your services online.'
+      description: 'Advanced traffic analysis and filtering technology that instantly identifies and neutralizes distributed attacks, keeping your mission-critical services operational.'
     },
     {
       id: 6,
       icon: <Clock className={styles.featureIcon} />,
       title: 'Proactive Infrastructure Monitoring',
-      description: 'Real-time monitoring with predictive analytics to fix issues before they cause problems.'
+      description: 'Continuous real-time surveillance with predictive analytics to identify potential vulnerabilities and resolve issues before they impact operational integrity.'
     }
   ];
 

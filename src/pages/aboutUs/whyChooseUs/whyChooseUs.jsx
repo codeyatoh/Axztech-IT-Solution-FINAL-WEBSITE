@@ -59,6 +59,7 @@ const WhyChooseUs = () => {
             </motion.div>
           ))}
         </div>
+        {/* Removed the imageSection with 'Trusted by businesses worldwide' */}
       </div>
     </section>
   )

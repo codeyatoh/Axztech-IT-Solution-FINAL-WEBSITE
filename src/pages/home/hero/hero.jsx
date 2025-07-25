@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Hero.module.css';
 import Button from '../../../common/button/button';
-import { NavLink } from 'react-router-dom';
 const taglines = [
   [
     'Empowering businesses with cutting-edge technology',
@@ -83,12 +82,8 @@ const Hero = () => {
       <p>{displayed[1]}<span className={`${styles.cursor} ${line === 1 ? styles.blink : ''}`}>{line === 1 ? '|' : ''}</span></p>
     </div>
         <div className={styles.buttonGroup}>
-          <NavLink to="/products" style={{ textDecoration: 'none' }}>
-            <Button primary>Explore our products</Button>
-          </NavLink>
-          <NavLink to="/contact" style={{ textDecoration: 'none' }}>
-            <Button secondary>Contact us</Button>
-          </NavLink>
+          <Button primary>Explore our products</Button>
+          <Button secondary>Contact us</Button>
         </div>
             </div>
           </div>

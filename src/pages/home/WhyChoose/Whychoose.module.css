@@ -1,8 +1,9 @@
 .whyChooseContainer {
     width: 100%;
-    padding: 80px 20px;
+    padding: 80px 36px 80px 20px; /* Increased right padding for all screens */
     background-color: #f7f7f7;
     font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    box-sizing: border-box;
 }
 .whyChooseTitle {
     font-size: 48px;
@@ -41,6 +42,7 @@
     flex-direction: column;
     min-height: 340px;
     transition: box-shadow 0.2s, transform 0.2s;
+    box-sizing: border-box;
 }
 .whyChooseCard:hover {
     box-shadow: 0 12px 32px rgba(51,52,70,0.18);
@@ -108,10 +110,24 @@
     z-index: 1;
 }
 @media (max-width: 900px) {
+    .whyChooseContainer {
+        padding-right: 28px; /* More right padding on mobile */
+        padding-left: 14px;
+    }
     .whyChooseCards {
       flex-direction: column;
     }
     .whyChooseCard {
       margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .whyChooseContainer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .whyChooseCard {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

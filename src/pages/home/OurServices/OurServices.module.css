@@ -9,6 +9,9 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1.5rem; /* Increased right padding for all screens */
+    box-sizing: border-box;
 }
 .title {
     font-size: 3.5rem;
@@ -49,6 +52,7 @@
     min-height: 420px;
     position: relative;
     transition: box-shadow 0.2s;
+    box-sizing: border-box;
 }
 .card:hover {
     box-shadow: 0 8px 40px rgba(20,0,254,0.12);
@@ -116,8 +120,8 @@
 }
 @media (max-width: 900px) {
     .container {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 1.25rem; /* More right padding on mobile */
     }
     .cardsContainer {
         grid-template-columns: 1fr;
@@ -136,5 +140,15 @@
     }
     .subtitle {
         font-size: 1.5rem;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .card {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

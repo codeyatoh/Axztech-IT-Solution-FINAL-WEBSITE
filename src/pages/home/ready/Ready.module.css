@@ -28,6 +28,7 @@
     padding: 60px 20px;
     position: relative;
     z-index: 2;
+    box-sizing: border-box;
   }
   .badge {
     display: inline-block;
@@ -82,6 +83,7 @@
   padding: 60px 20px;
   background: #f5f7f6;
   text-align: center;
+  box-sizing: border-box;
 }
 .title {
   font-size: 2.5rem;
@@ -99,4 +101,14 @@
 .section :global(button) {
   display: block;
   margin: 2rem auto 0 auto;
+}
+@media (max-width: 480px) {
+    .ready-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

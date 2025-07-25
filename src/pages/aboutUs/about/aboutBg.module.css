@@ -14,4 +14,10 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
+}
+@media (max-width: 480px) {
+  .aboutBg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 } 

@@ -38,6 +38,16 @@
     color: #fdfbfa;
     /* No outline or border */
 }
+.cardPrimaryButton {
+    composes: defaultButton;
+    background-color: #1400fe;
+    color: #fdfbfa;
+}
+.cardPrimaryButton:hover,
+.cardPrimaryButton:focus {
+    background-color: #cd0600;
+    color: #fdfbfa;
+}
 @media (max-width: 768px) {
     .defaultButton {
       width: 100%;

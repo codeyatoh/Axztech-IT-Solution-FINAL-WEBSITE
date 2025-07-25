@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import styles from './Button.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Button = ({ children, primary, secondary, onClick }) => {
+const Button = ({ children, primary, secondary, cardPrimary, onClick }) => {
   const [hovered, setHovered] = useState(false);
-  const buttonClass = primary 
-    ? styles.primaryButton 
-    : secondary 
-    ? styles.secondaryButton 
-    : styles.defaultButton;
+  let buttonClass = styles.defaultButton;
+  if (cardPrimary) {
+    buttonClass = styles.cardPrimaryButton;
+  } else if (primary) {
+    buttonClass = styles.primaryButton;
+  } else if (secondary) {
+    buttonClass = styles.secondaryButton;
+  }
   return (
     <button 
       className={buttonClass}

@@ -58,9 +58,12 @@
     color: #555;
     flex-grow: 1;
 }
-.accentCard {
-    position: relative;
-    overflow: hidden;
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 18px;
+  z-index: 2;
 }
 .accentOverlay {
     position: absolute;
@@ -68,7 +71,7 @@
     right: -50px;
     width: 250px;
     height: 250px;
-    background: linear-gradient(135deg, rgba(220, 235, 113, 0.7), rgba(148, 216, 45, 0.7));
+    background: linear-gradient(135deg, rgba(0,200,83,0.18), rgba(20,0,254,0.10)); /* green and blue, more subtle */
     border-radius: 50%;
     z-index: 0;
 }

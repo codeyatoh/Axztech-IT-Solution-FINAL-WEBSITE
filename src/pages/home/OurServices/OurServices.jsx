@@ -21,7 +21,7 @@ function OurServices() {
             <div className={styles.cardDate}>For Businesses</div>
             <div className={styles.cardTitle}>Solutions System Portal</div>
             <div className={styles.cardSubtitle}>Our flagship SSP product provides a comprehensive system portal that integrates and streamlines your business operations.</div>
-            <Button primary>Learn More</Button>
+            <Button cardPrimary>Learn More</Button>
           </div>
           {/* Second card */}
           <div className={styles.card}>
@@ -31,7 +31,7 @@ function OurServices() {
             <div className={styles.cardDate}>Custom Mobile</div>
             <div className={styles.cardTitle}>Applications</div>
             <div className={styles.cardSubtitle}>Tailored mobile app solutions designed to meet your specific business or community needs perfect for service efficiency, real-time tracking, and user engagement.</div>
-            <Button primary>Learn More</Button>
+            <Button cardPrimary>Learn More</Button>
           </div>
           {/* Third card */}
           <div className={styles.card}>
@@ -41,7 +41,7 @@ function OurServices() {
             <div className={styles.cardDate}>Custom Software</div>
             <div className={styles.cardTitle}>Development</div>
             <div className={styles.cardSubtitle}>Tailored software solutions designed to meet your specific business requirements and challenges.</div>
-            <Button primary>Learn More</Button>
+            <Button cardPrimary>Learn More</Button>
           </div>
         </div>
       </div>

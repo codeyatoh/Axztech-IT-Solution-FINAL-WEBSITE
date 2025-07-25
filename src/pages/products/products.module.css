@@ -51,19 +51,26 @@
 .featureCardsSection {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 650px;
+  gap: 10px;
+  max-width: 500px; /* reduce max width for smaller cards */
+  padding-left: 16px; /* add horizontal padding */
+  padding-right: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .featureCard {
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-  padding: 12px 14px 10px 14px;
+  border-radius: 14px; /* slightly smaller radius */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 10px 12px 8px 12px; /* reduce padding */
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 10px; /* reduce gap */
   opacity: 1;
   transform: none;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
   /* animation handled inline for staggered effect */
 }
 .featureIcon {
@@ -144,6 +151,16 @@
     font-size: clamp(0.9rem, 4vw, 1rem);
     line-height: 1.35;
   }
+  .featureCardsSection {
+    max-width: 98vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .featureCard {
+    padding: 8px 6px 6px 6px;
+    border-radius: 10px;
+    gap: 8px;
+  }
 }
 @media (max-width: 600px) {
   .productsPageBg {
@@ -159,13 +176,14 @@
     padding: 0 2vw;
   }
   .featureCardsSection {
-    max-width: 98vw;
-    gap: 8px;
+    max-width: 100vw;
+    padding-left: 4px;
+    padding-right: 4px;
   }
   .featureCard {
-    padding: 10px 6px 8px 6px;
-    border-radius: 12px;
-    gap: 10px;
+    padding: 6px 2px 4px 2px;
+    border-radius: 8px;
+    gap: 6px;
   }
   .productsLogo {
     width: clamp(80px, 40vw, 120px);

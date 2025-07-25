@@ -8,6 +8,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    box-sizing: border-box;
   }
   .missionVisionContainer {
     display: flex;
@@ -20,6 +21,7 @@
     min-width: 300px;
     border-radius: 8px;
     padding: 2rem;
+    box-sizing: border-box;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
@@ -69,5 +71,15 @@
     }
     .card {
       min-width: 100%;
+    }
+  }
+  @media (max-width: 480px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .card {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }

@@ -1,0 +1,73 @@
+.missionVisionSection {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .missionVisionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .card {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .card1 {
+    background-color: #0057FF;
+    color: #fff;
+  }
+  .card2 {
+    background-color: #FF2D2D;
+    color: #fff;
+  }
+  .card3 {
+    background-color: #FFD600;
+    color: #333446;
+  }
+  .card4 {
+    background-color: #00C853;
+    color: #fff;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .iconContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .icon {
+    color: #333446;
+  }
+  .title {
+    font-size: 1.8rem;
+    color: inherit;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  .content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: inherit;
+    font-style: italic;
+  }
+  @media (max-width: 768px) {
+    .missionVisionContainer {
+      flex-direction: column;
+    }
+    .card {
+      min-width: 100%;
+    }
+  }

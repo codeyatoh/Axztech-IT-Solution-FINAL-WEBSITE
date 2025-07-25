@@ -15,12 +15,11 @@
 }
 .heading h2 {
   font-size: 2.5rem;
-  color: #1400fe;
   font-weight: bold;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  background-clip: unset;
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .underline {
   height: 4px;

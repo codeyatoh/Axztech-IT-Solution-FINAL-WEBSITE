@@ -76,8 +76,9 @@ const Products = () => {
                 <motion.div
                   key={idx}
                   className={styles.featureCard}
-                  {...fadeInUp}
-                  transition={{ ...fadeInUp.transition, delay: 0.25 + idx * 0.13 }}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.25 + idx * 0.13, type: 'tween' }}
                 >
                   <div className={styles.featureIcon}>{feature.icon}</div>
                   <div>

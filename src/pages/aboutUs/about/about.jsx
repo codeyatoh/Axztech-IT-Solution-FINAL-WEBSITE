@@ -34,8 +34,9 @@ const About = () => {
               <motion.div
                 className={styles.feature}
                 key={f.title}
-                {...fadeInUp}
-                transition={{ ...fadeInUp.transition, delay: 0.2 + i * 0.15 }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 + i * 0.15, type: 'spring', bounce: 0.3 }}
               >
                 {f.icon}
                 <h3>{f.title}</h3>

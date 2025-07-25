@@ -59,21 +59,6 @@ const WhyChooseUs = () => {
             </motion.div>
           ))}
         </div>
-        <motion.div className={styles.imageSection} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.2 }}>
-          <div className={styles.imageText}>
-            <h3 className={styles.imageTitle}>Trusted by businesses worldwide</h3>
-            <p className={styles.imageDescription}>
-              Our team works tirelessly to ensure your IT infrastructure runs smoothly and efficiently.
-            </p>
-          </div>
-          <div className={styles.imageContainer}>
-            <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-              alt="Professional IT team" 
-              className={styles.image}
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   )
